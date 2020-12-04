@@ -1,7 +1,7 @@
 {:ok, input} = File.read("input.txt")
 
 report = input |> String.split("\n", trim: true)
-               |> Enum.map(fn el -> String.to_integer(el) end)
+               |> Enum.map(&String.to_integer/1)
                |> Enum.sort
 
 expected_sum = 2020
